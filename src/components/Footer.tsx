@@ -9,7 +9,7 @@ export default function Footer() {
                                 garage_home
                             </span>
                         </div>
-                        <h2 className="text-white text-xl font-bold">Garage Rent</h2>
+                        <h2 className="text-white text-xl font-bold">Garaż Giżycko</h2>
                     </div>
                     <div className="flex gap-4">
                         <a
@@ -28,7 +28,7 @@ export default function Footer() {
                 </div>
                 <div className="h-px w-full bg-[#23170f]"></div>
                 <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-                    <p>© 2024 Garage Rent Giżycko. Wszelkie prawa zastrzeżone.</p>
+                    <p>© 2024 Garaż Giżycko. Wszelkie prawa zastrzeżone.</p>
                     <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                         <a href="#" className="hover:text-primary transition-colors">
                             Regulamin

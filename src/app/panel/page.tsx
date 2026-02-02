@@ -10,7 +10,7 @@ export default function PanelPage() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    // Smart Garage State
+    // Smart Garage State (Now Admin Only)
     const [gateOpen, setGateOpen] = useState(false);
     const [lightsOn, setLightsOn] = useState(false);
     const [heatingOn, setHeatingOn] = useState(true);
@@ -44,10 +44,10 @@ export default function PanelPage() {
                 <main className="flex flex-col gap-10 pb-20">
                     {/* LOGIN VIEW */}
                     {view === "login" && (
-                        <div className="max-w-md mx-auto w-full bg-[#1a1613] border border-[#3a2f27] rounded-3xl p-8 md:p-12 flex flex-col gap-8 shadow-2xl mt-12">
+                        <div className="max-w-md mx-auto w-full bg-[#1a1613] border border-[#3a2f27] rounded-3xl p-8 md:p-12 flex flex-col gap-8 shadow-2xl mt-12 animate-fade-in">
                             <div className="flex flex-col gap-2 text-center">
-                                <h1 className="text-3xl font-bold text-white">Witaj ponownie</h1>
-                                <p className="text-gray-400">Zaloguj się do swojego warsztatu</p>
+                                <h1 className="text-3xl font-bold text-white">Strefa Klienta</h1>
+                                <p className="text-gray-400">Garaż Giżycko - Twój warsztat</p>
                             </div>
 
                             <form onSubmit={handleLogin} className="flex flex-col gap-6">
@@ -87,31 +87,105 @@ export default function PanelPage() {
                         </div>
                     )}
 
-                    {/* USER DASHBOARD */}
+                    {/* USER DASHBOARD (Informational) */}
                     {view === "user" && (
-                        <>
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div className="animate-fade-in">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                                 <div className="flex flex-col gap-2">
-                                    <h1 className="text-4xl font-bold text-white">Panel Klienta</h1>
-                                    <p className="text-gray-400">Witaj, Jan! Zarządzaj swoim warsztatem.</p>
+                                    <h1 className="text-4xl font-bold text-white">Witaj, Jan!</h1>
+                                    <p className="text-gray-400">Oto szczegóły Twojej dzisiejszej wizyty.</p>
                                 </div>
                                 <button onClick={handleLogout} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
                                     <span className="material-symbols-outlined">logout</span> Wyloguj
                                 </button>
                             </div>
 
-                            {/* Smart Garage Controls */}
-                            <section className="bg-gradient-to-r from-[#23170f] to-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 md:p-8 flex flex-col gap-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                {/* Access Card */}
+                                <div className="bg-gradient-to-br from-[#23170f] to-[#1a1613] border border-primary/30 rounded-3xl p-8 md:p-10 flex flex-col justify-center items-center text-center gap-6 shadow-[0_0_50px_rgba(255,106,0,0.1)] relative overflow-hidden group">
+                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <span className="material-symbols-outlined text-primary text-5xl mb-2">lock_open</span>
+                                    <div>
+                                        <p className="text-gray-400 text-sm uppercase tracking-widest mb-2">Kod Dostępu do Bramy</p>
+                                        <div className="text-7xl font-mono font-bold text-white tracking-widest drop-shadow-xl">
+                                            4892
+                                        </div>
+                                    </div>
+                                    <div className="text-xs text-gray-500 bg-[#120f0c] px-4 py-2 rounded-full border border-[#3a2f27]">
+                                        Ważny dzisiaj: 18:00 - 21:00
+                                    </div>
+                                </div>
+
+                                {/* Info Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-3 hover:border-primary/30 transition-colors">
+                                        <span className="material-symbols-outlined text-gray-400 text-3xl">wifi</span>
+                                        <span className="text-gray-500 text-xs uppercase font-bold">WiFi</span>
+                                        <div className="text-white font-mono text-xl">Garage_Guest</div>
+                                        <div className="text-gray-400 text-sm">Hasło: <span className="text-primary font-bold">Smar+Garage24</span></div>
+                                    </div>
+
+                                    <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-3 hover:border-primary/30 transition-colors">
+                                        <span className="material-symbols-outlined text-gray-400 text-3xl">directions_car</span>
+                                        <span className="text-gray-500 text-xs uppercase font-bold">Stanowisko</span>
+                                        <div className="text-white text-3xl font-bold">Nr 2</div>
+                                        <div className="text-gray-400 text-sm">Podnośnik 4T</div>
+                                    </div>
+
+                                    <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-3 sm:col-span-2 hover:border-primary/30 transition-colors cursor-pointer group">
+                                        <div className="flex justify-between items-start">
+                                            <div className="flex flex-col gap-1">
+                                                <span className="material-symbols-outlined text-gray-400 text-3xl group-hover:text-primary transition-colors">help</span>
+                                                <span className="text-white font-bold text-lg mt-2">Instrukcja Obsługi</span>
+                                            </div>
+                                            <span className="material-symbols-outlined text-gray-600 group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+                                        </div>
+                                        <p className="text-gray-400 text-sm">Jak obsługiwać podnośnik i gdzie znaleźć narzędzia.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex items-center justify-between">
+                                <div>
+                                    <h3 className="text-white font-bold">Jesteś na miejscu?</h3>
+                                    <p className="text-gray-400 text-sm">Otwórz bramę zdalnie jeśli kod nie działa.</p>
+                                </div>
+                                <button className="bg-[#23170f] hover:bg-primary border border-primary/30 text-primary hover:text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center gap-2">
+                                    <span className="material-symbols-outlined">remote_gen</span>
+                                    Otwórz Bramę
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* ADMIN DASHBOARD (With Smart Features) */}
+                    {view === "admin" && (
+                        <div className="animate-fade-in">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                                <div className="flex flex-col gap-2">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-500 text-xs font-bold uppercase tracking-wider w-fit border border-red-500/20">
+                                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                        Admin Mode
+                                    </div>
+                                    <h1 className="text-4xl font-bold text-white">Centrum Zarządzania</h1>
+                                </div>
+                                <button onClick={handleLogout} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                                    <span className="material-symbols-outlined">logout</span> Wyloguj
+                                </button>
+                            </div>
+
+                            {/* Smart Garage Controls (Now Here) */}
+                            <section className="bg-gradient-to-r from-[#23170f] to-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 md:p-8 flex flex-col gap-6 mb-8 shadow-xl">
                                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
                                     <span className="material-symbols-outlined text-primary">smartphone</span>
-                                    Smart Garage
+                                    Smart Garage Control
                                 </h2>
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <button
                                         onClick={() => setGateOpen(!gateOpen)}
-                                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 transition-all ${gateOpen ? 'bg-primary/20 border-primary text-white' : 'bg-[#1a1613] border-[#3a2f27] text-gray-400 hover:border-gray-600'}`}
+                                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 transition-all ${gateOpen ? 'bg-primary/20 border-primary text-white scale-[1.02]' : 'bg-[#1a1613] border-[#3a2f27] text-gray-400 hover:border-gray-600'}`}
                                     >
-                                        <span className={`material-symbols-outlined text-3xl ${gateOpen ? 'text-primary' : ''}`}>
+                                        <span className={`material-symbols-outlined text-3xl transition-transform ${gateOpen ? 'text-primary' : ''}`}>
                                             {gateOpen ? 'gate' : 'fence'}
                                         </span>
                                         <span className="font-bold text-sm">{gateOpen ? 'Brama Otwarta' : 'Brama Zamknięta'}</span>
@@ -119,9 +193,9 @@ export default function PanelPage() {
 
                                     <button
                                         onClick={() => setLightsOn(!lightsOn)}
-                                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 transition-all ${lightsOn ? 'bg-yellow-500/20 border-yellow-500 text-white' : 'bg-[#1a1613] border-[#3a2f27] text-gray-400 hover:border-gray-600'}`}
+                                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 transition-all ${lightsOn ? 'bg-yellow-500/20 border-yellow-500 text-white scale-[1.02]' : 'bg-[#1a1613] border-[#3a2f27] text-gray-400 hover:border-gray-600'}`}
                                     >
-                                        <span className={`material-symbols-outlined text-3xl ${lightsOn ? 'text-yellow-500' : ''}`}>
+                                        <span className={`material-symbols-outlined text-3xl transition-transform ${lightsOn ? 'text-yellow-500' : ''}`}>
                                             {lightsOn ? 'lightbulb' : 'light_off'}
                                         </span>
                                         <span className="font-bold text-sm">{lightsOn ? 'Światła Włączone' : 'Światła Wyłączone'}</span>
@@ -129,9 +203,9 @@ export default function PanelPage() {
 
                                     <button
                                         onClick={() => setHeatingOn(!heatingOn)}
-                                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 transition-all ${heatingOn ? 'bg-red-500/20 border-red-500 text-white' : 'bg-[#1a1613] border-[#3a2f27] text-gray-400 hover:border-gray-600'}`}
+                                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 transition-all ${heatingOn ? 'bg-red-500/20 border-red-500 text-white scale-[1.02]' : 'bg-[#1a1613] border-[#3a2f27] text-gray-400 hover:border-gray-600'}`}
                                     >
-                                        <span className={`material-symbols-outlined text-3xl ${heatingOn ? 'text-red-500' : ''}`}>
+                                        <span className={`material-symbols-outlined text-3xl transition-transform ${heatingOn ? 'text-red-500' : ''}`}>
                                             thermostat
                                         </span>
                                         <span className="font-bold text-sm">{heatingOn ? 'Ogrzewanie ON' : 'Ogrzewanie OFF'}</span>
@@ -139,95 +213,7 @@ export default function PanelPage() {
                                 </div>
                             </section>
 
-                            {/* Main Content (Stats & Booking) */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-2">
-                                    <span className="text-gray-400 text-sm font-medium">Aktywne rezerwacje</span>
-                                    <div className="flex items-end gap-2">
-                                        <span className="text-4xl font-bold text-white">1</span>
-                                        <span className="text-primary text-sm mb-1">nadchodząca</span>
-                                    </div>
-                                </div>
-                                <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-2">
-                                    <span className="text-gray-400 text-sm font-medium">Twoje godziny</span>
-                                    <div className="flex items-end gap-2">
-                                        <span className="text-4xl font-bold text-white">12</span>
-                                        <span className="text-gray-500 text-sm mb-1">w tym miesiącu</span>
-                                    </div>
-                                </div>
-                                <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-2">
-                                    <span className="text-gray-400 text-sm font-medium">Dostępne środki</span>
-                                    <div className="flex items-end gap-2">
-                                        <span className="text-4xl font-bold text-white">45 zł</span>
-                                        <button className="text-primary text-sm font-bold mb-1 hover:underline">Doładuj konto</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <section className="flex flex-col lg:flex-row gap-8">
-                                <div className="flex-1 bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-8 flex flex-col gap-6">
-                                    <div className="flex items-center justify-between">
-                                        <h2 className="text-xl font-bold text-white">Następna wizyta</h2>
-                                        <span className="bg-green-500/10 text-green-500 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Potwierdzona</span>
-                                    </div>
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex items-center gap-4 p-4 bg-[#23170f] rounded-xl border border-[#3a2f27]">
-                                            <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
-                                                <span className="material-symbols-outlined text-2xl">calendar_month</span>
-                                            </div>
-                                            <div>
-                                                <h3 className="text-white font-bold">12 Października 2023</h3>
-                                                <p className="text-gray-400 text-sm">Czwartek</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center gap-4 p-4 bg-[#23170f] rounded-xl border border-[#3a2f27]">
-                                            <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
-                                                <span className="material-symbols-outlined text-2xl">schedule</span>
-                                            </div>
-                                            <div>
-                                                <h3 className="text-white font-bold">18:00 - 21:00</h3>
-                                                <p className="text-gray-400 text-sm">3 godziny | Stanowisko nr 2</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4 mt-auto">
-                                        <button className="flex-1 bg-primary hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors text-sm">Edytuj</button>
-                                        <button className="flex-1 bg-transparent border border-[#3a2f27] hover:border-white text-white font-bold py-3 rounded-xl transition-colors text-sm">Anuluj</button>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 bg-gradient-to-br from-[#1a1613] to-[#2a1d15] border border-[#3a2f27] rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden">
-                                    <div className="relative z-10 flex flex-col gap-4">
-                                        <h2 className="text-xl font-bold text-white">Szybka rezerwacja</h2>
-                                        <p className="text-gray-400">Potrzebujesz garażu na już? Sprawdź najbliższe wolne terminy.</p>
-                                        <button className="w-full bg-white text-black hover:bg-gray-200 font-bold py-3.5 rounded-xl transition-colors text-sm mt-4 flex items-center justify-center gap-2">
-                                            <span className="material-symbols-outlined">add_circle</span>
-                                            Nowa rezerwacja
-                                        </button>
-                                    </div>
-                                    <span className="material-symbols-outlined absolute -bottom-8 -right-8 text-[180px] text-white/5 pointer-events-none">garage_home</span>
-                                </div>
-                            </section>
-                        </>
-                    )}
-
-                    {/* ADMIN DASHBOARD */}
-                    {view === "admin" && (
-                        <>
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                                <div className="flex flex-col gap-2">
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-500 text-xs font-bold uppercase tracking-wider w-fit border border-red-500/20">
-                                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                                        Admin Mode
-                                    </div>
-                                    <h1 className="text-4xl font-bold text-white">Panel Administratora</h1>
-                                </div>
-                                <button onClick={handleLogout} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
-                                    <span className="material-symbols-outlined">logout</span> Wyloguj
-                                </button>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                                 <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-6 flex flex-col gap-2">
                                     <span className="text-gray-400 text-sm font-medium">Przychód (Miesięczny)</span>
                                     <div className="flex items-end gap-2">
@@ -299,15 +285,9 @@ export default function PanelPage() {
                                         </div>
                                         <span className="font-medium">Zablokuj termin</span>
                                     </button>
-                                    <button className="w-full bg-[#23170f] hover:bg-[#2a1d15] border border-[#3a2f27] text-white p-4 rounded-xl flex items-center gap-4 transition-colors text-left group">
-                                        <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined">notifications</span>
-                                        </div>
-                                        <span className="font-medium">Wyślij powiadomienie</span>
-                                    </button>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     )}
                 </main>
             </div>
@@ -315,4 +295,3 @@ export default function PanelPage() {
         </div>
     );
 }
-
