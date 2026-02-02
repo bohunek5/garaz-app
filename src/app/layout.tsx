@@ -5,8 +5,19 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-    title: "Garage Rent | Twój warsztat na godziny w Giżycku",
-    description: "Wynajmij profesjonalny, w pełni wyposażony warsztat samochodowy na godziny. Podnośnik, narzędzia, ogrzewanie. Giżycko, ul. Sybiraków 28.",
+    title: "Garaż Giżycko 24/7 | Wynajem Garażu z Wyposażeniem Warsztatowym",
+    description: "Wynajmij w pełni wyposażony garaż w Giżycku. Podnośniki, narzędzia specjalistyczne, ogrzewanie. Dostępny 24/7. Idealne miejsce do naprawy i detailingu Twojego samochodu.",
+    keywords: "wynajem garażu Giżycko, garaż warsztatowy, podnośnik samochodowy, naprawa auta Giżycko, detailing Giżycko, garaż z wyposażeniem",
+    authors: [{ name: "Garaż Giżycko" }],
+    icons: {
+        icon: "/favicon.ico",
+    },
+    openGraph: {
+        title: "Garaż Giżycko 24/7 | Wynajem Garażu z Wyposażeniem",
+        description: "Wynajmij w pełni wyposażony garaż w Giżycku. Podnośniki, narzędzia, ogrzewanie. Dostępny 24/7.",
+        type: "website",
+        locale: "pl_PL",
+    },
 };
 
 export default function RootLayout({
