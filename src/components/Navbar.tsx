@@ -13,7 +13,7 @@ export default function Navbar() {
                     <span className="material-symbols-outlined text-xl">garage_home</span>
                 </div>
                 <h1 className="text-white text-xl font-bold tracking-wide group-hover:text-primary transition-colors">
-                    Garage Rent
+                    Garaż Giżycko 24/7
                 </h1>
             </Link>
 

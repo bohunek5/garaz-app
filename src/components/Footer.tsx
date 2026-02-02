@@ -9,7 +9,7 @@ export default function Footer() {
                                 garage_home
                             </span>
                         </div>
-                        <h2 className="text-white text-xl font-bold">Garaż Giżycko</h2>
+                        <h2 className="text-white text-xl font-bold">Garaż Giżycko 24/7</h2>
                     </div>
                     <div className="flex gap-4">
                         <a
