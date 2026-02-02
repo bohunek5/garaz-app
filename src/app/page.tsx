@@ -1,4 +1,3 @@
-```javascript
 "use client";
 
 import Navbar from "@/components/Navbar";
@@ -14,55 +13,55 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="relative w-full rounded-3xl overflow-hidden min-h-[600px] flex items-center bg-black">
-             {/* Background Image */}
-            <div className="absolute inset-0">
-                <img 
-                    src="/garaz-app/hero-bg.png" 
-                    alt="Garage workshop background" 
-                    className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src="/garaz-app/hero-bg.png"
+              alt="Garage workshop background"
+              className="w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+          </div>
+
+          {/* Content Overlay */}
+          <div className="relative z-10 px-8 md:px-16 flex flex-col gap-8 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3a2f27]/50 border border-primary/30 w-fit backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-xs uppercase tracking-wider font-bold text-primary">
+                Dostępne Teraz
+              </span>
             </div>
 
-            {/* Content Overlay */}
-            <div className="relative z-10 px-8 md:px-16 flex flex-col gap-8 max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3a2f27]/50 border border-primary/30 w-fit backdrop-blur-sm">
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    <span className="text-xs uppercase tracking-wider font-bold text-primary">
-                      Dostępne Teraz
-                    </span>
-                 </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+              Twój własny <br /> warsztat na <br /> godziny w <span className="text-primary">Giżycku</span>
+            </h1>
 
-                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                    Twój własny <br/> warsztat na <br/> godziny w <span className="text-primary">Giżycku</span>
-                </h1>
-                
-                <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
-                    Profesjonalna przestrzeń przy ul. Sybiraków 28. <br className="hidden md:block"/>
-                    Wynajmij stanowisko z podnośnikiem, napraw swoje <br className="hidden md:block"/>
-                    auto i wyjedź z satysfakcją.
-                </p>
+            <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+              Profesjonalna przestrzeń przy ul. Sybiraków 28. <br className="hidden md:block" />
+              Wynajmij stanowisko z podnośnikiem, napraw swoje <br className="hidden md:block" />
+              auto i wyjedź z satysfakcją.
+            </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                    <Link href="/panel">
-                        <button className="h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold text-sm shadow-lg shadow-orange-900/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
-                            Zarezerwuj termin
-                            <span className="material-symbols-outlined text-[20px]">calendar_month</span>
-                        </button>
-                    </Link>
-                    <Link href="/cennik">
-                        <button className="h-12 px-8 rounded-lg bg-[#23170f]/80 backdrop-blur-sm border border-gray-600 hover:bg-gray-800 text-white font-medium text-sm transition-all flex items-center justify-center w-full sm:w-auto">
-                            Zobacz cennik
-                        </button>
-                    </Link>
-                </div>
-
-                <div className="flex items-center gap-2 text-sm text-gray-400 font-medium mt-4">
-                     <span className="material-symbols-outlined text-primary text-[20px]">star</span>
-                     <span className="text-white font-bold">4.9/5</span>
-                     <span>na podstawie 120+ opinii</span>
-                </div>
+            <div className="flex flex-col sm:flex-row gap-4 mt-2">
+              <Link href="/panel">
+                <button className="h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold text-sm shadow-lg shadow-orange-900/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
+                  Zarezerwuj termin
+                  <span className="material-symbols-outlined text-[20px]">calendar_month</span>
+                </button>
+              </Link>
+              <Link href="/cennik">
+                <button className="h-12 px-8 rounded-lg bg-[#23170f]/80 backdrop-blur-sm border border-gray-600 hover:bg-gray-800 text-white font-medium text-sm transition-all flex items-center justify-center w-full sm:w-auto">
+                  Zobacz cennik
+                </button>
+              </Link>
             </div>
+
+            <div className="flex items-center gap-2 text-sm text-gray-400 font-medium mt-4">
+              <span className="material-symbols-outlined text-primary text-[20px]">star</span>
+              <span className="text-white font-bold">4.9/5</span>
+              <span>na podstawie 120+ opinii</span>
+            </div>
+          </div>
         </section>
 
         {/* Feature Section */}
@@ -182,10 +181,10 @@ export default function Home() {
               </div>
             </div>
             <Link href="/lokalizacja">
-                <button className="mt-4 flex items-center justify-center gap-2 rounded-lg h-12 px-6 border border-gray-600 hover:border-white text-white font-medium transition-colors w-fit">
+              <button className="mt-4 flex items-center justify-center gap-2 rounded-lg h-12 px-6 border border-gray-600 hover:border-white text-white font-medium transition-colors w-fit">
                 <span className="material-symbols-outlined text-[20px]">map</span>
                 <span>Nawiguj do nas</span>
-                </button>
+              </button>
             </Link>
           </div>
           <div className="flex-1 min-h-[400px] lg:min-h-auto relative bg-[#1a1613]">
@@ -197,4 +196,3 @@ export default function Home() {
     </div>
   );
 }
-```
