@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 import BookingCalendar from "@/components/BookingCalendar";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -16,10 +17,12 @@ export default function Home() {
         <section className="relative w-full rounded-3xl overflow-hidden min-h-[600px] flex items-center bg-black">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img
-              src="/garaz-app/hero-bg.png"
+            <Image
+              src="/hero-bg.png"
               alt="Garage workshop background"
-              className="w-full h-full object-cover opacity-60"
+              fill
+              className="object-cover opacity-60"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
           </div>
