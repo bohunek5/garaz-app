@@ -6,13 +6,13 @@ export default function GoogleMap({ className = "w-full h-full" }: { className?:
             {/* Google Map Iframe */}
             <div className="absolute inset-0 bg-[#1a1613]">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2348.6575778848464!2d21.763428977114674!3d54.03816657249405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e1599a0b925555%3A0xe53c35043588974a!2sSybirak%C3%BBw%2028%2C%2011-500%20Gi%C5%BCycko!5e0!3m2!1spl!2spl!4v1706890000000!5m2!1spl!2spl"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.8764433843246!2d21.765428776899!3d54.038166733964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e1599a0b925555%3A0xe53c35043588974a!2sSybirak%C3%B3w%2028%2C%2011-500%20Gi%C5%BCycko%2C%20Poland!5e0!3m2!1sen!2spl!4v1738527872000!5m2!1sen!2spl"
                     className="w-full h-full grayscale invert-[0.9] contrast-[1.1] brightness-[0.7] hue-rotate-[180deg] mix-blend-luminosity"
                     style={{ border: 0 }}
                     allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Google Map showing garage location"
+                    title="Google Map showing garage location at Sybiraków 28, Giżycko"
                 ></iframe>
             </div>
 

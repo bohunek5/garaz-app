@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
+import BookingCalendar from "@/components/BookingCalendar";
 import Link from "next/link";
 
 export default function Home() {
@@ -43,12 +44,16 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <Link href="/panel">
-                <button className="h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold text-sm shadow-lg shadow-orange-900/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
-                  Zarezerwuj termin
-                  <span className="material-symbols-outlined text-[20px]">calendar_month</span>
-                </button>
-              </Link>
+              <button
+                onClick={() => {
+                  const bookingSection = document.getElementById('booking-calendar');
+                  bookingSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="h-12 px-8 rounded-lg bg-primary hover:bg-orange-600 text-white font-bold text-sm shadow-lg shadow-orange-900/20 transition-all flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
+              >
+                Zarezerwuj termin
+                <span className="material-symbols-outlined text-[20px]">calendar_month</span>
+              </button>
               <Link href="/cennik">
                 <button className="h-12 px-8 rounded-lg bg-[#23170f]/80 backdrop-blur-sm border border-gray-600 hover:bg-gray-800 text-white font-medium text-sm transition-all flex items-center justify-center w-full sm:w-auto">
                   Zobacz cennik
@@ -191,6 +196,11 @@ export default function Home() {
             <GoogleMap />
           </div>
         </section>
+
+        {/* Booking Calendar Section */}
+        <div id="booking-calendar" className="scroll-mt-24">
+          <BookingCalendar />
+        </div>
       </div>
       <Footer />
     </div>
