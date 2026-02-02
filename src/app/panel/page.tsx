@@ -3,12 +3,17 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Modal from "@/components/Modal";
 
 export default function PanelPage() {
     const [view, setView] = useState("login"); // 'login', 'user', 'admin'
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+
+    // Modal states
+    const [showAddClientModal, setShowAddClientModal] = useState(false);
+    const [showBlockDateModal, setShowBlockDateModal] = useState(false);
 
     // Smart Garage State (Now Admin Only)
     const [gateOpen, setGateOpen] = useState(false);
@@ -37,11 +42,11 @@ export default function PanelPage() {
     };
 
     return (
-        <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col">
-            <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-8">
-                <Navbar />
+        <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col pt-20">
+            <Navbar />
 
-                <main className="flex flex-col gap-10 pb-20">
+            <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-8">
+                <main className="flex flex-col gap-10 pb-20 pt-10">
                     {/* LOGIN VIEW */}
                     {view === "login" && (
                         <div className="max-w-md mx-auto w-full bg-[#1a1613] border border-[#3a2f27] rounded-3xl p-8 md:p-12 flex flex-col gap-8 shadow-2xl mt-12 animate-fade-in">
@@ -273,13 +278,19 @@ export default function PanelPage() {
 
                                 <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl p-8 flex flex-col gap-6">
                                     <h2 className="text-xl font-bold text-white">Szybkie Akcje</h2>
-                                    <button className="w-full bg-[#23170f] hover:bg-[#2a1d15] border border-[#3a2f27] text-white p-4 rounded-xl flex items-center gap-4 transition-colors text-left group">
+                                    <button
+                                        onClick={() => setShowAddClientModal(true)}
+                                        className="w-full bg-[#23170f] hover:bg-[#2a1d15] border border-[#3a2f27] text-white p-4 rounded-xl flex items-center gap-4 transition-all hover:scale-[1.02] text-left group"
+                                    >
                                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                             <span className="material-symbols-outlined">person_add</span>
                                         </div>
                                         <span className="font-medium">Dodaj klienta</span>
                                     </button>
-                                    <button className="w-full bg-[#23170f] hover:bg-[#2a1d15] border border-[#3a2f27] text-white p-4 rounded-xl flex items-center gap-4 transition-colors text-left group">
+                                    <button
+                                        onClick={() => setShowBlockDateModal(true)}
+                                        className="w-full bg-[#23170f] hover:bg-[#2a1d15] border border-[#3a2f27] text-white p-4 rounded-xl flex items-center gap-4 transition-all hover:scale-[1.02] text-left group"
+                                    >
                                         <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors">
                                             <span className="material-symbols-outlined">block</span>
                                         </div>
@@ -292,6 +303,91 @@ export default function PanelPage() {
                 </main>
             </div>
             <Footer />
+
+            {/* Add Client Modal */}
+            <Modal
+                isOpen={showAddClientModal}
+                onClose={() => setShowAddClientModal(false)}
+                title="Dodaj Nowego Klienta"
+                actionLabel="Dodaj"
+                onAction={() => {
+                    // Handle add client
+                    setShowAddClientModal(false);
+                }}
+            >
+                <div className="flex flex-col gap-4">
+                    <div>
+                        <label className="text-sm text-gray-400 mb-1 block">Imię i Nazwisko</label>
+                        <input
+                            type="text"
+                            placeholder="Jan Kowalski"
+                            className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors"
+                        />
+                    </div>
+                    <div>
+                        <label className="text-sm text-gray-400 mb-1 block">Email</label>
+                        <input
+                            type="email"
+                            placeholder="jan@kowalski.pl"
+                            className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors"
+                        />
+                    </div>
+                    <div>
+                        <label className="text-sm text-gray-400 mb-1 block">Numer Rejestracyjny</label>
+                        <input
+                            type="text"
+                            placeholder="WN 12345"
+                            className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors"
+                        />
+                    </div>
+                </div>
+            </Modal>
+
+            {/* Block Date Modal */}
+            <Modal
+                isOpen={showBlockDateModal}
+                onClose={() => setShowBlockDateModal(false)}
+                title="Zablokuj Termin"
+                actionLabel="Zablokuj"
+                onAction={() => {
+                    // Handle block date
+                    setShowBlockDateModal(false);
+                }}
+            >
+                <div className="flex flex-col gap-4">
+                    <div>
+                        <label className="text-sm text-gray-400 mb-1 block">Data</label>
+                        <input
+                            type="date"
+                            className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors"
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                        <div>
+                            <label className="text-sm text-gray-400 mb-1 block">Od</label>
+                            <input
+                                type="time"
+                                className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors"
+                            />
+                        </div>
+                        <div>
+                            <label className="text-sm text-gray-400 mb-1 block">Do</label>
+                            <input
+                                type="time"
+                                className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label className="text-sm text-gray-400 mb-1 block">Powód (opcjonalnie)</label>
+                        <textarea
+                            placeholder="np. Konserwacja sprzętu"
+                            rows={3}
+                            className="w-full bg-[#23170f] border border-[#3a2f27] text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors resize-none"
+                        ></textarea>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 }

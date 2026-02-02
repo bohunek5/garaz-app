@@ -1,15 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function OfferPage() {
     return (
-        <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col">
-            <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-8">
-                <Navbar />
+        <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col pt-20">
+            <Navbar />
 
-                <main className="flex flex-col gap-12 pb-20">
+            <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-8">
+                <main className="flex flex-col gap-12 pb-20 pt-10">
                     <div className="flex flex-col gap-4 text-center py-10 animate-fade-in">
                         <h1 className="text-4xl md:text-5xl font-bold text-white">Nasza Oferta</h1>
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -77,9 +78,11 @@ export default function OfferPage() {
                                 Stale rozszerzamy nasz asortyment. Jeśli potrzebujesz specjalistycznego narzędzia, daj nam znać przed wizytą.
                             </p>
                         </div>
-                        <button className="bg-white text-black hover:bg-gray-200 font-bold py-3.5 px-8 rounded-xl transition-colors text-sm whitespace-nowrap">
-                            Skontaktuj się z nami
-                        </button>
+                        <Link href="/lokalizacja">
+                            <button className="bg-white text-black hover:bg-gray-200 font-bold py-3.5 px-8 rounded-xl transition-all hover:scale-105 text-sm whitespace-nowrap">
+                                Skontaktuj się z nami
+                            </button>
+                        </Link>
                     </div>
                 </main>
             </div>
