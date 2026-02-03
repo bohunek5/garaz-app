@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function OfferPage() {
     return (
@@ -21,50 +22,86 @@ export default function OfferPage() {
                     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Category 1 */}
                         <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors animate-fade-in" style={{ animationDelay: "0s" }}>
-                            <div className="h-48 bg-[#23170f] relative flex items-center justify-center">
-                                <span className="material-symbols-outlined text-8xl text-primary/20 group-hover:text-primary/40 transition-colors">directions_car</span>
+                            <div className="h-56 relative overflow-hidden">
+                                <Image
+                                    src="/assets/offer-workstations.png"
+                                    alt="Stanowiska warsztatowe"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1613] to-transparent"></div>
+                                <div className="absolute bottom-4 left-6">
+                                    <h3 className="text-xl font-bold text-white uppercase tracking-wider">Stanowiska</h3>
+                                </div>
                             </div>
                             <div className="p-8 flex flex-col gap-4">
-                                <h3 className="text-xl font-bold text-white">Stanowiska</h3>
-                                <ul className="text-gray-400 space-y-2">
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-primary rounded-full"></span>Podnośnik dwukolumnowy 4T</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-primary rounded-full"></span>Podnośnik nożycowy 3T</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-primary rounded-full"></span>Stanowisko do detailingu</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-primary rounded-full"></span>Oświetlenie inspekcyjne LED</li>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    Nasze stanowiska są zaprojektowane z myślą o maksymalnej wygodzie i bezpieczeństwie. Każde z nich posiada profesjonalny podnośnik i dostęp do zasilania.
+                                </p>
+                                <ul className="text-gray-300 space-y-3 text-sm">
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Podnośnik dwukolumnowy 4T (YATO)</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Podnośnik nożycowy 3T do prac podwoziowych</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Dedykowane stanowisko detailingowe z mocnym oświetleniem</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Oświetlenie inspekcyjne LED 360°</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Stół warsztatowy z imadłem na każdym stanowisku</li>
                                 </ul>
                             </div>
                         </div>
 
                         {/* Category 2 */}
                         <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                            <div className="h-48 bg-[#23170f] relative flex items-center justify-center">
-                                <span className="material-symbols-outlined text-8xl text-green-500/20 group-hover:text-green-500/40 transition-colors">handyman</span>
+                            <div className="h-56 relative overflow-hidden">
+                                <Image
+                                    src="/assets/offer-tools.png"
+                                    alt="Narzędzia specjalistyczne"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1613] to-transparent"></div>
+                                <div className="absolute bottom-4 left-6">
+                                    <h3 className="text-xl font-bold text-white uppercase tracking-wider">Narzędzia Specjalistyczne</h3>
+                                </div>
                             </div>
                             <div className="p-8 flex flex-col gap-4">
-                                <h3 className="text-xl font-bold text-white">Narzędzia Specjalistyczne</h3>
-                                <ul className="text-gray-400 space-y-2">
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Zlewarka do oleju</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Żuraw warsztatowy (do silników)</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Ściągacz do sprężyn</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Klucz dynamometryczny</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>Prasa hydrauliczna 20T</li>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    Nie musisz posiadać drogich narzędzi, aby wykonać kompleksową naprawę. Udostępniamy sprzęt najwyższej klasy dostępny na żądanie.
+                                </p>
+                                <ul className="text-gray-300 space-y-3 text-sm">
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Pneumatyczna zlewarka do oleju 80L</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Żuraw warsztatowy o udźwigu 2T i stojaki do silników</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Profesjonalne ściągacze do sprężyn i łożysk</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Klucze dynamometryczne o szerokim zakresie (5-300Nm)</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Stacjonarna prasa hydrauliczna 20T</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Pneumatyczny ściągacz do sprężyn McPherson</li>
                                 </ul>
                             </div>
                         </div>
 
                         {/* Category 3 */}
                         <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                            <div className="h-48 bg-[#23170f] relative flex items-center justify-center">
-                                <span className="material-symbols-outlined text-8xl text-blue-500/20 group-hover:text-blue-500/40 transition-colors">power</span>
+                            <div className="h-56 relative overflow-hidden">
+                                <Image
+                                    src="/assets/offer-electronics.png"
+                                    alt="Elektronarzędzia i diagnostyka"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1613] to-transparent"></div>
+                                <div className="absolute bottom-4 left-6">
+                                    <h3 className="text-xl font-bold text-white uppercase tracking-wider">Elektronika i Diagnostyka</h3>
+                                </div>
                             </div>
                             <div className="p-8 flex flex-col gap-4">
-                                <h3 className="text-xl font-bold text-white">Elektronarzędzia + Diagno</h3>
-                                <ul className="text-gray-400 space-y-2">
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Klucz udarowy pneumatyczny</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Kompresor 200L</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Interfejs diagnostyczny OBD2</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Szlifierka kątowa</li>
-                                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>Lampa UV do klimatyzacji</li>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    Nowoczesne samochody wymagają elektroniki. Oferujemy kompresory i narzędzia diagnostyczne, które pomogą Ci usunąć każdą usterkę.
+                                </p>
+                                <ul className="text-gray-300 space-y-3 text-sm">
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Klucze udarowe pneumatyczne 1500Nm</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>System sprężonego powietrza (Kompresor 200L)</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Zaawansowany tester diagnostyczny OBD2 (wszystkie marki)</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Szlifierki kątowe, wiertarki i wyrzynarki Makita</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Lampa UV do klimatyzacji i zestaw do sprawdzania szczelności</li>
+                                    <li className="flex items-center gap-3"><span className="material-symbols-outlined text-primary text-sm font-bold">check_circle</span>Zasilacz laboratoryjny i multimetr True RMS</li>
                                 </ul>
                             </div>
                         </div>

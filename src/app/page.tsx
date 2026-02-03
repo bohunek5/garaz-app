@@ -15,13 +15,26 @@ export default function Home() {
         <section className="relative w-full rounded-3xl overflow-hidden min-h-[600px] flex items-center bg-black">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <Image
-              src="/hero-bg.png"
-              alt="Garage workshop background"
-              fill
-              className="object-cover opacity-60"
-              priority
-            />
+            {/* Desktop Hero Image */}
+            <div className="hidden md:block absolute inset-0">
+              <Image
+                src="/assets/hero-pc.png"
+                alt="Professional garage workshop"
+                fill
+                className="object-cover opacity-60"
+                priority
+              />
+            </div>
+            {/* Mobile Hero Image */}
+            <div className="md:hidden absolute inset-0">
+              <Image
+                src="/assets/hero-mobile.png"
+                alt="Garage workshop mobile view"
+                fill
+                className="object-cover opacity-60"
+                priority
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
           </div>
 

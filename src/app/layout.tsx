@@ -33,7 +33,7 @@ export default function RootLayout({
             </head>
             <body className={`${inter.variable} font-sans bg-[#1A1A1A] text-white antialiased`}>
                 <Navbar />
-                <div className="pt-20">
+                <div className="pt-24 md:pt-20">
                     {children}
                 </div>
             </body>
