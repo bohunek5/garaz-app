@@ -18,7 +18,7 @@ export default function Home() {
             {/* Desktop Hero Image */}
             <div className="hidden md:block absolute inset-0">
               <Image
-                src="/assets/hero-pc.png"
+                src="/garaz-app/assets/hero-pc.png"
                 alt="Professional garage workshop"
                 fill
                 className="object-cover opacity-60"
@@ -28,7 +28,7 @@ export default function Home() {
             {/* Mobile Hero Image */}
             <div className="md:hidden absolute inset-0">
               <Image
-                src="/assets/hero-mobile.png"
+                src="/garaz-app/assets/hero-mobile.png"
                 alt="Garage workshop mobile view"
                 fill
                 className="object-cover opacity-60"

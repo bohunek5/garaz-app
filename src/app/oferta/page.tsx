@@ -24,7 +24,7 @@ export default function OfferPage() {
                         <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors animate-fade-in" style={{ animationDelay: "0s" }}>
                             <div className="h-56 relative overflow-hidden">
                                 <Image
-                                    src="/assets/offer-workstations.png"
+                                    src="/garaz-app/assets/offer-workstations.png"
                                     alt="Stanowiska warsztatowe"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
@@ -52,7 +52,7 @@ export default function OfferPage() {
                         <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors animate-fade-in" style={{ animationDelay: "0.1s" }}>
                             <div className="h-56 relative overflow-hidden">
                                 <Image
-                                    src="/assets/offer-tools.png"
+                                    src="/garaz-app/assets/offer-tools.png"
                                     alt="Narzędzia specjalistyczne"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
@@ -81,7 +81,7 @@ export default function OfferPage() {
                         <div className="bg-[#1a1613] border border-[#3a2f27] rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors animate-fade-in" style={{ animationDelay: "0.2s" }}>
                             <div className="h-56 relative overflow-hidden">
                                 <Image
-                                    src="/assets/offer-electronics.png"
+                                    src="/garaz-app/assets/offer-electronics.png"
                                     alt="Elektronarzędzia i diagnostyka"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
