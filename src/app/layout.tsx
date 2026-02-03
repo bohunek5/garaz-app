@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     keywords: "wynajem garażu Giżycko, garaż warsztatowy, podnośnik samochodowy, naprawa auta Giżycko, detailing Giżycko, garaż z wyposażeniem",
     authors: [{ name: "Garaż Giżycko" }],
     icons: {
-        icon: "/favicon.png",
+        icon: "/garaz-app/favicon.png",
     },
     openGraph: {
         title: "Garaż Giżycko 24/7 | Wynajem Garażu z Wyposażeniem",
