@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 import BookingCalendar from "@/components/BookingCalendar";
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col">
       <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-12 md:gap-24">
-        <Navbar />
 
         {/* Hero Section */}
         <section className="relative w-full rounded-3xl overflow-hidden min-h-[600px] flex items-center bg-black">

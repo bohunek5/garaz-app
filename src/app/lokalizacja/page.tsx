@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 
@@ -8,7 +7,7 @@ export default function LocationPage() {
     return (
         <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col">
             <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-8">
-                <Navbar />
+
 
                 <main className="flex flex-col gap-12 pb-20 flex-grow">
                     <div className="flex flex-col gap-4 py-8">

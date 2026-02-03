@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Modal from "@/components/Modal";
 
@@ -42,8 +41,8 @@ export default function PanelPage() {
     };
 
     return (
-        <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col pt-20">
-            <Navbar />
+        <div className="bg-[#120f0c] min-h-screen font-sans flex flex-col">
+
 
             <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 lg:px-20 flex-grow flex flex-col gap-8">
                 <main className="flex flex-col gap-10 pb-20 pt-10">
