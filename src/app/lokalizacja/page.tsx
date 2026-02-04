@@ -18,7 +18,7 @@ export default function LocationPage() {
                         </p>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-10 h-[600px] lg:h-[500px]">
+                    <div className="flex flex-col lg:flex-row gap-10 min-h-[800px] lg:h-[500px]">
                         {/* Contact Info */}
                         <div className="lg:w-1/3 bg-[#1a1613] border border-[#3a2f27] rounded-3xl p-8 flex flex-col gap-8 h-fit">
                             <div className="flex items-start gap-4">
@@ -67,7 +67,7 @@ export default function LocationPage() {
                         </div>
 
                         {/* Map */}
-                        <div className="flex-1 rounded-3xl overflow-hidden border border-[#3a2f27] shadow-2xl h-full">
+                        <div className="flex-1 rounded-3xl overflow-hidden border border-[#3a2f27] shadow-2xl h-full min-h-[400px]">
                             <GoogleMap />
                         </div>
                     </div>
